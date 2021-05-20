@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resources/css/main.css" rel="stylesheet">
+        <script src="resources/jquery-3.6.0.min.js"></script>
+        <script src="resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="resources/main.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
+        <link id="favicon-light" rel="icon" type="image/png" href="resources/images/sunriseDurhamDarkLogoCircular.png"/>
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
+        <title>How To Join - Sunrise Durham</title>
+        <style>
+            #orientation-guide {
+                width: 100%;
+                height: calc(4300px * min(calc(var(--viewport-width) / 816), 1));
+            }
+            #guide-container {
+                width: 100%;
+            }
+            .signup-form, .signup-form *:not(.at-button):not(.at-submit) {
+                background-color: var(--sunrise-dark) !important;
+                color: var(--sunrise-mint) !important;
+            }
+            .select2-dropdown {
+                background-color: var(--sunrise-mint) !important;
+            }
+            .at-submit {
+                background-color: var(--sunrise-yellow) !important;
+                color: var(--sunrise-dark) !important;
+            }
+            .at input[type="text"]:focus, .at input[type="password"]:focus, .at input[type="date"]:focus, .at input[type="datetime"]:focus, .at input[type="datetime-local"]:focus, .at input[type="month"]:focus, .at input[type="week"]:focus, .at input[type="email"]:focus, .at input[type="number"]:focus, .at input[type="search"]:focus, .at input[type="tel"]:focus, .at input[type="time"]:focus, .at input[type="url"]:focus, .at input[type="color"]:focus, .at textarea:focus, .at select:focus {
+                border-color: var(--sunrise-yellow) !important;
+            }
+            .at input[type="checkbox"]:active+span:before, .at input[type="checkbox"]:checked+span:before, .select2-container--default .select2-results__option--highlighted[aria-selected] {
+                background-color: var(--sunrise-yellow) !important;
+                border-color: var(--sunrise-yellow) !important;
+                color: var(--sunrise-dark) !important;
+            }
+            .at input[type="checkbox"]:focus+span:before {
+                box-shadow: 0 0 4px 0 var(--sunrise-yellow) !important;
+                border-color: var(--sunrise-yellow) !important;
+            }
+            .at input[type="checkbox"]:hover+span:before {
+                border-color: var(--sunrise-yellow) !important;
+            }
+            .at input[type="checkbox"]:checked+span:after {
+                color: var(--sunrise-dark) !important;
+            }
+        </style>
+        <script>
+            window.addEventListener('scroll', function() {
+                let guide = document.getElementById("orientation-guide")
+                //guide.style.position = window.pageYOffset >= guide.offsetTop ? "fixed" : "relative"
+                let height = guide.offsetTop + guide.offsetHeight
+                if (window.pageYOffset + window.innerHeight >= height) {
+                    document.getElementById("signup-continue").style.opacity = 1
+                }
+            })
+            window.onload = function() {
+                document.body.style.setProperty("--viewport-width", window.visualViewport.width.toString());
+            }
+            window.addEventListener("resize", function() {
+                document.body.style.setProperty("--viewport-width", window.visualViewport.width.toString());
+            })
+            function continueToForm() {
+                document.getElementsByClassName("signup-form")[0].style.width = "100%"
+                document.getElementsByClassName("signup-form")[0].style.height = "100%"
+                document.getElementsByClassName("signup-form")[0].style.opacity = "1"
+                setTimeout(function() { window.scrollTo(0, document.getElementsByClassName("signup-form")[0].offsetTop); }, 100);
+            }
+        </script>
+    </head>
+    <body class="text bg-sunrise-dark" style="--viewport-width: 816;">
+        <script src="resources/navbar.js" id="navbar" data-page="join"></script>
+        <script type="text/javascript" src="https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js"></script>
+
+        <div style="height: 100%;">
+            <div class="content m-5" style="height: 100%;">
+                <div class="container-fluid mb-3 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                    <h1 class="sunrise-mint text-center" style="/* text-shadow: var(--sunrise-red) 1px 1px; */ padding: 2em;">
+                        We're so excited that you want to join our hub! <img src="https://emoji.slack-edge.com/TFW7DABS9/hamsterdance/9b3c4e13c217304a.gif" alt="A GIF emoji of a hamster dancing." style="height: 2ex; padding-bottom: 0.5ex;"> Please first read the orientation guide (below) and then fill out the plug-in form (below the guide).
+                    </h1>
+                </div>
+                <button class="btn btn-sunrise-yellow mb-3" onclick="continueToForm()">Jump To Form</button>
+                <iframe title="Sunrise Durham Welcome Guide" id="orientation-guide" src="https://docs.google.com/document/d/1TjYFr4sr1oPy7SBpy6VRxqTPK2E10w660U4lL0dG6X4/preview?overridemobile=true"></iframe>
+                <div id="signup-continue" style="transition: opacity 0.5s; opacity: 0;">
+                    <button class="btn btn-sunrise-yellow" onclick="continueToForm()">Continue To Form</button>
+                </div>
+                <div style="transition: width 0.5s, height 0.5s, opacity 0.5s; width: 0%; height: 0; opacity: 0; border-width: 5px; border-style: solid;" class="ngp-form signup-form bg-sunrise-dark outline-celebratory-gradient" data-form-url="https://actions.everyaction.com/v1/Forms/vsqjjp55z0qrusTfeoBkPQ2"></div>
+            </div>
+        </div>
+
+        <script src="resources/current_alert.961d5100bad2e82362f4b40ec22f5caf6bf04db2.js" id="current-alert"></script>
+
+        <script src="resources/footer.js" id="footer"></script>
+    </body>
+</html>

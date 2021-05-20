@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resources/css/main.css" rel="stylesheet">
+        <script src="resources/jquery-3.6.0.min.js"></script>
+        <script src="resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <script src="resources/main.js"></script>
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
+        <link id="favicon-light" rel="icon" type="image/png" href="resources/images/sunriseDurhamDarkLogoCircular.png"/>
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
+        <title>Upcoming Actions - Sunrise Durham</title>
+    </head>
+    <body class="text bg-sunrise-dark">
+        <script src="resources/navbar.js" id="navbar" data-page="actions"></script>
+        
+        <div style="height: 100%;">
+            <div class="content m-5" style="height: 100%;">
+                <div class="container-fluid mb-5 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                    <h1 class="sunrise-mint text-headline text-center" style="padding: 1em;">
+                        UPCOMING ACTIONS
+                    </h1>
+                </div>
+                <p class="sunrise-mint mb-5" style="font-size: 1.5rem;">
+                    There are currently no upcoming actions. In the meantime, why not check out <span onclick="window.scrollTo(0, document.getElementById('upcoming-events').offsetTop);" class="sunrise-link" style="cursor: pointer;">our upcoming events page</span>?
+                </p> <!-- delete above when there are actions, see the commented code below for how to add an action -->
+                <!-- <script src="resources/action.js" onload="action(this)"
+                data-title="THIS IS HOW YOU ADD AN ACTION"
+                data-date="January 1<sup>st</sup>, 2021 @ 12am"
+                data-description="This is a placeholder."
+                data-url="https://www.sunrisemovement.org"></script> -->
+                <div class="container-fluid mb-5 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                    <h1 class="sunrise-mint text-headline text-center" style="padding: 1em;">
+                        <a href="https://secure.everyaction.com/p/xLVnx4O2cU2JEOeu_yXnKQ2" target="_blank" rel="noopener noreferrer" class="sunrise-link sunrise-mint-important">UPCOMING EVENTS</a>
+                    </h1>
+                </div>
+                <iframe id="upcoming-events" src="https://secure.everyaction.com/p/xLVnx4O2cU2JEOeu_yXnKQ2" style="width: 100%; height: 100vh;"></iframe>
+            </div>
+        </div>
+
+        <script src="resources/current_alert.961d5100bad2e82362f4b40ec22f5caf6bf04db2.js" id="current-alert"></script>
+
+        <script src="resources/footer.js" id="footer"></script>
+    </body>
+</html>
