@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="/">
+        <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resources/css/main.css" rel="stylesheet">
+        <script src="resources/jquery-3.6.0.min.js"></script>
+        <script src="resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <script src="resources/main.js"></script>
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
+        <link id="favicon-light" rel="icon" type="image/png" href="resources/images/sunriseDurhamDarkLogoCircular.png"/>
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
+        <title>Page Editor - Sunrise Durham</title>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+        <script src="resources/htmlSanitizer.js"></script>
+        <script>
+            function produceHTML() {
+                var template = `<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="/">
+        <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resources/css/main.css" rel="stylesheet">
+        <script src="resources/jquery-3.6.0.min.js"><\/script>
+        <script src="resources/bootstrap/js/bootstrap.bundle.min.js"><\/script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <script src="resources/main.js"><\/script>
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
+        <link id="favicon-light" rel="icon" type="image/png" href="resources/images/sunriseDurhamDarkLogoCircular.png"/>
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
+        <title>${document.getElementById("input-title").value}</title>
+    </head>
+    <body class="text bg-sunrise-dark">
+        <script src="resources/navbar.ab00e29bf2ab2200a14617970e0362334d3203d8.js" id="navbar" data-page="${document.getElementById("navbarSelect").value}"><\/script>
+
+        <div style="height: 100%;">
+            <div class="content m-5" style="height: 100%;">
+                ${window.html}
+            </div>
+        </div>
+
+        <script src="resources/current_alert.961d5100bad2e82362f4b40ec22f5caf6bf04db2.js" id="current-alert"><\/script>
+
+        <script src="resources/footer.js" id="footer"><\/script>
+    </body>
+</html>`
+                return template;
+            }
+            const renderer = {
+                link(href, title, text) {
+                    return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="sunrise-link">${text}</a>`
+                },
+                paragraph(text) {
+                    text = text.replace(/\^(.[^\^]*)\^/, function replacer(match, p1, offset, string) {return `<span class="text-serif">${p1}</span>`})
+                    return `<p class="sunrise-mint" style="font-size: 1.5rem;">${text}</p>`
+                },
+                heading(text, level) {
+                    if (level == 1) { // Title of the page
+                        return `<div class="container-fluid mb-5 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                                    <h1 class="sunrise-mint text-headline text-center" style="padding: 1em;">
+                                        ${text.toUpperCase()}
+                                    </h1>
+                                </div>`
+                    } else {
+                        return `<h${level}>
+                                    ${text}
+                                </h${level}>`
+                    }
+                },
+                hr() {
+                    return `<hr class="bg-celebratory-gradient-horizontal" style="padding: 0.1em; border-color: transparent !important; margin: 3%;"/>`
+                }
+            };
+            marked.use({ renderer })
+            function update(text) {
+                window.html = marked.parse(text);
+                document.getElementById("preview").innerHTML = window.html;
+                document.getElementById("download-html").href = `data:text/html,${produceHTML()}`
+                document.getElementById("download-html").download = document.getElementById("input-title").value.toLowerCase().replace(" ", "_");
+            }
+            function updateTitle() {
+                document.getElementById("download-html").href = `data:text/html,${produceHTML()}`
+                document.getElementById("download-html").download = document.getElementById("input-title").value.toLowerCase().replace(" ", "_");
+            }
+            function googleDoc() {
+                alert("Welcome to the Google Doc helper! This shows you how to download a Google Doc and import it into this editor.");
+                let url = prompt("First, please enter the URL of your Google Doc:", "URL");
+                let fileID = url.match(/\/d\/(.[^/]*)/)[1];
+                alert("Awesome, thank you! Now, I'm going to automatically download the Google Doc for you.");
+                window.open(`https://docs.google.com/document/export?format=html&id=${fileID}`, "_blank");
+                alert("Now that you've downloaded the file, click the button highlighted in orange, upload the file, and you're done!");
+                document.getElementsByTagName("label")[0].style.backgroundColor = "var(--sunrise-orange)";
+            }
+            document.onreadystatechange = () => {
+                const upload = document.getElementById("upload");
+                function handleFiles() {
+                    document.getElementsByTagName("label")[0].style.backgroundColor = "transparent";
+                    console.log("handling files");
+                    const fileList = document.getElementById("upload").files; /* now you can work with the file list */
+                    fileList[0].text().then(value => {
+                        if (fileList[0].type == "text/html") {
+                            console.log("hi")
+                            var turndownService = new TurndownService();
+                            var markdown = turndownService.turndown(sanitizeHtml(value).replace(/&#160;/g, ' '));
+                            document.getElementsByTagName("textarea")[0].value = markdown;
+                        } else {
+                            document.getElementsByTagName("textarea")[0].value = value;
+                        }
+                        update(document.getElementsByTagName("textarea")[0].value);
+                    });
+                }
+                upload.addEventListener("change", handleFiles, false);
+            }
+        </script>
+        <script>
+            window.navbarOptionIds = [];
+            window.navbarOptionNames = [];
+            function reqListener() {
+                var el = document.createElement("html");
+                el.innerHTML = this.responseText;
+                [...el.getElementsByClassName("btn-outline-sunrise-red")].forEach((link) => {;
+                    window.navbarOptionIds.push(link.id);
+                    window.navbarOptionNames.push(link.innerHTML.trim());
+
+                    let option = document.createElement("option");
+
+                    option.innerText = link.innerHTML.trim();
+                    option.value = link.id;
+
+                    document.getElementById("navbarSelect").appendChild(option);
+                })
+            }
+
+            var request = new XMLHttpRequest();
+            request.addEventListener("load", reqListener);
+            request.open("GET", "/resources/navbar.ab00e29bf2ab2200a14617970e0362334d3203d8.js");
+            request.send();
+        </script>
+    </head>
+    <body class="text bg-sunrise-dark">
+        <script src="resources/navbar.ab00e29bf2ab2200a14617970e0362334d3203d8.js" id="navbar" data-page="index"></script>
+
+        <div class="content m-5" style="height: 100%;">
+            <div style="display: flex;">
+                <input type="text" oninput="updateTitle()" placeholder="Title goes here" id="input-title">
+                <select id="navbarSelect">
+                    
+                </select>
+            </div>
+            <div style="display: flex;">
+                <textarea oninput="update(this.value);" style="width: 50%;"></textarea>
+                <div id="preview" class="sunrise-mint" style="width: 50%;"></div>
+            </div>
+            <a href="data:text/html," download="filename" id="download-html" role="button" style="cursor: pointer; text-decoration: none;" class="sunrise-yellow hover-sunrise-red">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                </svg>
+            </a>
+            <label for="upload" style="cursor: pointer;" class="sunrise-yellow hover-sunrise-red">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                </svg>
+            </label>
+            <input type="file" id="upload" style="opacity: 0; position: absolute; z-index: -1;" accept="text/markdown,.md,text/html,.html">
+            <div style="display: inline;" role="button" onclick="googleDoc()">
+                <img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" width="16" height="16">
+            </div>
+        </div>
+
+        <script src="resources/current_alert.961d5100bad2e82362f4b40ec22f5caf6bf04db2.js" id="current-alert"></script>
+
+        <script src="resources/footer.js" id="footer"></script>
+    </body>
+</html>
