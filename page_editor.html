@@ -56,7 +56,7 @@
         <script src="resources/footer.js" id="footer"><\/script>
     </body>
 </html>`
-                return template;
+                return encodeURIComponent(template);
             }
             const renderer = {
                 link(href, title, text) {
