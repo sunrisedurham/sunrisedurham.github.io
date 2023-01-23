@@ -29,17 +29,17 @@
 
             @media (orientation: portrait) {
                 .bg-vid {
-                    height: 100vh;
+                    height: 50vh;
                     width: 100%;
                 }
                 #video-overlay {
-                    height: 100% !important;
+                    height: 50% !important;
                 }
                 .intro {
-                    height: calc(100vh - var(--nav-height)) !important;
+                    height: calc(50vh - var(--nav-height)) !important;
                 }
                 .intro-header {
-                    height: 100% !important;
+                    height: 50% !important;
                 }
             }
 
@@ -49,7 +49,7 @@
 
             .intro-header {
                 position: relative;
-                height: calc(calc(100vw * 0.65625) - var(--nav-height));
+                height: calc(calc(100vw * 0.25625) - var(--nav-height));
                 margin-top: var(--nav-height);
                 width: 100%;
                 text-align: center;
@@ -60,9 +60,10 @@
             }
 
             .intro-text {
-                font-size: 15vw;
+                font-size: 5vw;
                 line-height: 1em;
                 padding-right: 1.8vw;
+                align-self: center;
             }
 
             .intro-image {
@@ -77,7 +78,7 @@
 
             .intro {
                 margin-top: calc(-1 * var(--nav-height));
-                height: calc(calc(var(--width-without-scrollbars) * 0.65625) - var(--nav-height));
+                height: calc(calc(var(--width-without-scrollbars) * 0.25625) - var(--nav-height));
                 border-image-source: var(--sunrise-celebratory-gradient-horizontal);
                 border-image-slice: 1;
                 border-top: 0px;
@@ -97,7 +98,7 @@
         </script>
     </head>
     <body class="text bg-sunrise-dark">
-        <script src="resources/navbar.839217423b91cec46e2570a0b69d9038de1de0da.js" id="navbar" data-page="index"></script>
+        <script src="resources/navbar.ab00e29bf2ab2200a14617970e0362334d3203d8.js" id="navbar" data-page="index"></script>
 
         <div class="intro">
             <div id="video-overlay" class="bg-sunrise-dark-overlay" style="width: 100%; height: calc(100vw * 0.65625); position: fixed; z-index: -1; top: 0; left: 0;"></div>
@@ -113,10 +114,10 @@
             </video>
             
             <header class="intro-header">
-                <div class="outline-celebratory-gradient" style="display: flex; padding: 1em; border-style: solid; border-width: 5px;">
-                    <img class="intro-image" src="resources/images/sunriseDurhamLogo.PNG" alt="The Sunrise Durham Logo" style="object-fit: contain;">
+                <div class="outline-celebratory-gradient" style="display: flex; padding: 1em; border-style: solid; border-width: 5px; height:90%; width:80%">
+                    <img class="intro-image" src="resources/images/sunriseDurhamLogo.PNG" alt="The Sunrise Durham Logo" style="object-fit: scale-down; align-self:center">
                     <h1 class="text-headline sunrise-yellow intro-text">
-                        <span>SUNRISE</span><br><span>DURHAM</span>
+                        <span>SUNRISE DURHAM</span>
                     </h1>
                 </div>
             </header>
@@ -125,10 +126,32 @@
         <main class="mb-5">
             <div class="m-5">
                 <div class="container-fluid mb-5 bg-sunrise-dark-overlay outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
-                    <h1 class="sunrise-mint text text-center" style="padding: 2em;">
+                    <h2 class="sunrise-mint text text-center" style="padding: 1em;">
                         We are the Durham hub of the <a href="https://www.sunrisemovement.org" target="_blank" rel="noopener noreferrer" class="sunrise-link">Sunrise Movement</a>, a youth movement to stop climate change and create millions of good jobs in the process.
-                    </h1>
+                    </h2>
+                    <h2 class="sunrise-mint text text-center" style="padding: 1em;">
+                        You can get involved by attending our hub meetings, which are <b style="color: var(--sunrise-yellow);" style="color: var(--sunrise-yellow);">Monday</b> at <b style="color: var(--sunrise-yellow);">8 PM</b>. They alternate with campaign meetings, which are on every other <b style="color: var(--sunrise-yellow);">Monday</b> at <b style="color: var(--sunrise-yellow);">8 PM</b>.
+                    </h2>
                 </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <div style="display: flex; flex-direction: column; flex-basis:30%">
+                        <h2 class="sunrise-mint text text-center">
+                            Get involved with Sunrise Durham by filling out our plug-in form
+                        </h2>
+                        <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://secure.everyaction.com/vsqjjp55z0qrusTfeoBkPQ2?emci=47222172-908f-ed11-9d7b-00224832e811&emdi=b13a1254-9c8f-ed11-9d7b-00224832e811&ceid=451888')">Fill Out Plug-In Form</button>
+                        
+                    </div>
+                    <div style="display: flex; flex-direction: column; flex-basis:30%">
+                         <h2 class="sunrise-mint text text-center">You can also donate</h3>
+                        <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://secure.actblue.com/donate/sunrisedurham')">Donate</button>
+                    
+                    </div>
+                    <div style="display: flex; flex-direction: column; flex-basis:30%">
+                        <h2 class="sunrise-mint text text-center">and/or read our Medium to learn more!</h3>
+                        <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://medium.com/@sunrisedurham')">Learn More</button>
+                        
+                    </div>
+                   </div>
             </div>
         </main>
 
