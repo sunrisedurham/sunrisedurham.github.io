@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="Description" content="We are the Durham hub of the Sunrise Movement, a youth movement to stop climate change and create millions of good jobs in the process.">
         <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="resources/css/main.css" rel="stylesheet">
         <script src="resources/jquery-3.6.0.min.js"></script>
@@ -13,147 +12,68 @@
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
         <script src="resources/main.js"></script>
-        <script src="resources/ugly_video_hack.js"></script> <!-- Safari needs a server that supports range requests to stream video, this script loads the video using JS and sets the source of the video to a base64 URL. Super ugly hack, but it works! :) -->
+        <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
         <link id="favicon-light" rel="icon" type="image/png" href="resources/images/sunriseDurhamDarkLogoCircular.png"/>
         <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
-        <title>Home - Sunrise Durham</title>
-        <style>
-            .bg-vid {
-                object-fit: cover;
-                width: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -2;
-            }
-
-            @media (orientation: portrait) {
-                .bg-vid {
-                    height: 50vh;
-                    width: 100%;
-                }
-                #video-overlay {
-                    height: 50% !important;
-                }
-                .intro {
-                    height: calc(50vh - var(--nav-height)) !important;
-                }
-                .intro-header {
-                    height: 50% !important;
-                }
-            }
-
-            .navbar {
-                z-index: 0;
-            }
-
-            .intro-header {
-                position: relative;
-                height: calc(calc(100vw * 0.25625) - var(--nav-height));
-                margin-top: var(--nav-height);
-                width: 100%;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: -1;
-            }
-
-            .intro-text {
-                font-size: 5vw;
-                line-height: 1em;
-                padding-right: 1.8vw;
-                align-self: center;
-            }
-
-            .intro-image {
-                height: 30vw;
-                padding-right: 5vw;
-                padding-left: 1.8vw;
-            }
-
-            .bg-sunrise-dark-overlay {
-                z-index: 0;
-            }
-
-            .intro {
-                margin-top: calc(-1 * var(--nav-height));
-                height: calc(calc(var(--width-without-scrollbars) * 0.25625) - var(--nav-height));
-                border-image-source: var(--sunrise-celebratory-gradient-horizontal);
-                border-image-slice: 1;
-                border-top: 0px;
-                border-left: 0px;
-                border-right: 0px;
-                border-bottom: solid;
-            }
-        </style>
-        <script>
-            window.addEventListener("load", function() {
-                document.body.style.setProperty("--video-height-mult", document.getElementsByClassName("bg-vid")[0].videoHeight / document.getElementsByClassName("bg-vid")[0].videoWidth);
-                document.body.style.setProperty("--width-without-scrollbars", window.getComputedStyle(document.getElementsByClassName("bg-vid")[0]).width);
-            })
-            window.addEventListener("resize", function() {
-                document.body.style.setProperty("--width-without-scrollbars", window.getComputedStyle(document.getElementsByClassName("bg-vid")[0]).width);
-            })
-        </script>
+        <title>Upcoming Actions - Sunrise Durham</title>
     </head>
     <body class="text bg-sunrise-dark">
-        <script src="resources/navbar.839217423b91cec46e2570a0b69d9038de1de0da.js" id="navbar" data-page="index"></script>
-
-        <div class="intro">
-            <div id="video-overlay" class="bg-sunrise-dark-overlay" style="width: 100%; height: calc(100vw * 0.65625); position: fixed; z-index: -1; top: 0; left: 0;"></div>
-            
-            <script>
-                let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-                if (isSafari) {
-                    videoHack("bg-video", "resources/videos/hubWebsiteVideo.mp4", "video/mp4")
-                }
-            </script>
-            <video playsinline autoplay muted loop class="bg-vid" id="bg-video">
-                <source src="resources/videos/hubWebsiteVideo.mp4" type="video/mp4">
-            </video>
-            
-            <header class="intro-header">
-                <div class="outline-celebratory-gradient" style="display: flex; padding: 1em; border-style: solid; border-width: 5px; height:90%; width:80%">
-                    <img class="intro-image" src="resources/images/sunriseDurhamLogo.PNG" alt="The Sunrise Durham Logo" style="object-fit: scale-down; align-self:center">
-                    <h1 class="text-headline sunrise-yellow intro-text">
-                        <span>SUNRISE DURHAM</span>
+        <script src="resources/navbar.839217423b91cec46e2570a0b69d9038de1de0da.js" id="navbar" data-page="actions"></script>
+        
+        <div style="height: 100%;">
+            <div class="content m-5" style="height: 100%;">
+                <div class="container-fluid mb-5 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                    <h1 class="sunrise-mint text-headline text-center" style="padding: 1em;">
+                        UPCOMING ACTIONS
                     </h1>
                 </div>
-            </header>
-        </div>
-
-        <main class="mb-5">
-            <div class="m-5">
-                <div class="container-fluid mb-5 bg-sunrise-dark-overlay outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
-                    <h2 class="sunrise-mint text text-center" style="padding: 1em;">
-                        We are the Durham hub of the <a href="https://www.sunrisemovement.org" target="_blank" rel="noopener noreferrer" class="sunrise-link">Sunrise Movement</a>, a youth movement to stop climate change and create millions of good jobs in the process.
-                    </h2>
-                    <h2 class="sunrise-mint text text-center" style="padding: 1em;">
-                        You can get involved by attending our hub meetings, which are <b style="color: var(--sunrise-yellow);" style="color: var(--sunrise-yellow);">Monday</b> at <b style="color: var(--sunrise-yellow);">8 PM</b>. They alternate with campaign meetings, which are on every other <b style="color: var(--sunrise-yellow);">Monday</b> at <b style="color: var(--sunrise-yellow);">8 PM</b>.
-                    </h2>
+                <!--<p class="sunrise-mint mb-5" style="font-size: 1.5rem;">
+                    There are currently no upcoming actions. In the meantime, why not check out <span onclick="window.scrollTo(0, document.getElementById('upcoming-events').offsetTop);" class="sunrise-link" style="cursor: pointer;">our upcoming events page</span>?
+                </p> <!-- delete above when there are actions, see the commented code below for how to add an action -->
+                <!-- <script src="resources/action.js" onload="action(this)"
+                data-title="THIS IS HOW YOU ADD AN ACTION"
+                data-date="January 1<sup>st</sup>, 2021 @ 12am"
+                data-description="This is a placeholder."
+                data-url="https://www.sunrisemovement.org"></script> -->
+                <script src="resources/action.js" onload="action(this)"
+                data-title="Talk at Eno River Association"
+                data-date="January 19<sup>st</sup>, 2023"
+                data-description="Come learn about Sunrise!"
+                data-url="https://secure.everyaction.com/vsqjjp55z0qrusTfeoBkPQ2?emci=47222172-908f-ed11-9d7b-00224832e811&emdi=b13a1254-9c8f-ed11-9d7b-00224832e811&ceid=451888"></script>
+                <div class="container-fluid mb-5 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                    <h1 class="sunrise-mint text-headline text-center" style="padding: 1em;">
+                        <a href="https://secure.everyaction.com/p/xLVnx4O2cU2JEOeu_yXnKQ2" target="_blank" rel="noopener noreferrer" class="sunrise-link sunrise-mint-important">UPCOMING EVENTS</a>
+                    </h1>
                 </div>
-                <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                    <div style="display: flex; flex-direction: column; flex-basis:30%">
-                        <h2 class="sunrise-mint text text-center">
-                            Get involved with Sunrise Durham by filling out our plug-in form
-                        </h2>
-                        <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://secure.everyaction.com/vsqjjp55z0qrusTfeoBkPQ2?emci=47222172-908f-ed11-9d7b-00224832e811&emdi=b13a1254-9c8f-ed11-9d7b-00224832e811&ceid=451888')">Fill Out Plug-In Form</button>
-                        
-                    </div>
-                    <div style="display: flex; flex-direction: column; flex-basis:30%">
-                         <h2 class="sunrise-mint text text-center">You can also donate</h3>
-                        <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://secure.actblue.com/donate/sunrisedurham')">Donate</button>
-                    
-                    </div>
-                    <div style="display: flex; flex-direction: column; flex-basis:30%">
-                        <h2 class="sunrise-mint text text-center">and/or read our Medium to learn more!</h3>
-                        <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://medium.com/@sunrisedurham')">Learn More</button>
-                        
-                    </div>
-                   </div>
+                <iframe id="upcoming-events" src="https://secure.everyaction.com/p/xLVnx4O2cU2JEOeu_yXnKQ2" style="width: 100%; height: 100vh;"></iframe>
+                <div class="container-fluid mb-5 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                    <h1 class="sunrise-mint text-headline text-center" style="padding: 1em;">
+                        PAST ACTIONS
+                    </h1>
+                </div>
+                    <script src="resources/action.js" onload="action(this)"
+                    data-title="Sunrise Movement National Gathering"
+                    data-date="December 9-11<sup>st</sup>, 2022"
+                    data-description=" "
+                    ></script>
+                    <script src="resources/action.js" onload="action(this)"
+                    data-title="Art Build"
+                    data-date="October 29<sup>st</sup>, 2022"
+                    data-description=" "
+                    ></script>
+                    <script src="resources/action.js" onload="action(this)"
+                    data-title="Protest against NC Utilities Commission @ Dobbs Building"
+                    data-date="September 23<sup>st</sup>, 2022"
+                    data-description=" "
+                    ></script>
+                    <script src="resources/action.js" onload="action(this)"
+                    data-title="Poster Event"
+                    data-date="September 10<sup>st</sup>, 2022"
+                    data-description=" "
+                    ></script>
+                
             </div>
-        </main>
+        </div>
 
         <script src="resources/current_alert.961d5100bad2e82362f4b40ec22f5caf6bf04db2.js" id="current-alert"></script>
 
