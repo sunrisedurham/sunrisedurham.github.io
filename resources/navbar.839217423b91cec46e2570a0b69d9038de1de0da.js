@@ -13,16 +13,6 @@ let navbar = `<nav class="navbar navbar-expand-lg bg-sunrise-dark-overlay">
                     Home
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="btn btn-outline-sunrise-red m-1" href="about.html" id="about">
-                    About The Hub
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-outline-sunrise-red m-1" href="join.html" id="join">
-                    How To Join
-                </a>
-            </li>
             <li class="nav-item dropdown">
                 <button class="btn btn-outline-sunrise-red m-1" id="campaignDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     Campaigns
@@ -38,7 +28,12 @@ let navbar = `<nav class="navbar navbar-expand-lg bg-sunrise-dark-overlay">
             </li>
             <li class="nav-item">
                 <a class="btn btn-outline-sunrise-red m-1" href="actions.html" id="actions">
-                    Upcoming Actions
+                    Recent Actions
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-sunrise-red m-1" href="about.html" id="about">
+                    About The Hub
                 </a>
             </li>
         </ul>
