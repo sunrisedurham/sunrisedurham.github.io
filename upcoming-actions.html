@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <base href="/">
         <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="resources/css/main.css" rel="stylesheet">
         <script src="resources/jquery-3.6.0.min.js"></script>
@@ -16,19 +15,33 @@
         <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
         <link id="favicon-light" rel="icon" type="image/png" href="resources/images/sunriseDurhamDarkLogoCircular.png"/>
         <link id="favicon-dark" rel="icon" type="image/png" href="resources/images/sunriseDurhamLogoCircular.png"/>
-        <title>Local Politics - Campaigns - Sunrise Durham</title>
+        <title>Upcoming Actions - Sunrise Durham</title>
     </head>
     <body class="text bg-sunrise-dark">
-        <script src="resources/navbar.f9bc506f06de154347fc687e9469e432ba8382e4.js" id="navbar" data-page="campaignDropdown"></script>
-
+        <script src="resources/navbar.f9bc506f06de154347fc687e9469e432ba8382e4.js" id="navbar" data-page="upcoming-actions"></script>
+        
         <div style="height: 100%;">
             <div class="content m-5" style="height: 100%;">
                 <div class="container-fluid mb-5 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
                     <h1 class="sunrise-mint text-headline text-center" style="padding: 1em;">
-                        ABOUT THE LOCAL POLITICS CAMPAIGN
+                        UPCOMING ACTIONS
                     </h1>
                 </div>
-                <p class="sunrise-mint" style="font-size: 1.5rem;">The Local Politics team focuses on bringing the vision of a Green New Deal to Durham through its political processes, including local elections, working with coalitions such as <a href="http://greennewdealfordurham.org/" target="_blank" rel="noopener noreferrer" class="sunrise-link">Green New Deal for Durham</a>, and more. Our current projects include asking Rep. David Price to co-sponsor the THRIVE Act, researching the development of a potential Green &amp; Equitable Infrastructure Bond for the city, and asking candidates in municipal elections to commit to a Green New Deal and refuse money from fossil fuel companies and Duke Energy. The team currently meets every other Tuesday at 6PM.</p>
+                <!--<p class="sunrise-mint mb-5" style="font-size: 1.5rem;">
+                    There are currently no upcoming actions. In the meantime, why not check out <span onclick="window.scrollTo(0, document.getElementById('upcoming-events').offsetTop);" class="sunrise-link" style="cursor: pointer;">our upcoming events page</span>?
+                </p> <!-- delete above when there are actions, see the commented code below for how to add an action -->
+                <!-- <script src="resources/action.js" onload="action(this)"
+                data-title="THIS IS HOW YOU ADD AN ACTION"
+                data-date="January 1<sup>st</sup>, 2021 @ 12am"
+                data-description="This is a placeholder."
+                data-url="https://www.sunrisemovement.org"></script> -->
+                <!-- <div class="container-fluid mb-5 bg-sunrise-dark outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                    <h1 class="sunrise-mint text-headline text-center" style="padding: 1em;">
+                        <a href="https://secure.everyaction.com/p/xLVnx4O2cU2JEOeu_yXnKQ2" target="_blank" rel="noopener noreferrer" class="sunrise-link sunrise-mint-important">UPCOMING EVENTS</a>
+                    </h1>
+                </div> -->
+                <iframe id="upcoming-events" src="https://secure.everyaction.com/p/xLVnx4O2cU2JEOeu_yXnKQ2" style="width: 100%; height: 100vh;"></iframe>
+                
             </div>
         </div>
 
