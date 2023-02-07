@@ -19,16 +19,18 @@
         <title>Home - Sunrise Durham</title>
         <style>
             .bg-vid {
-                object-fit: cover;
+                /*object-fit: cover;
                 width: 100%;
                 position: absolute;
                 top: 0;
                 left: 0;
-                z-index: -2;
+                z-index: -2;*/
+                margin-top: 50px;
             }
 
             @media (orientation: portrait) {
                 .bg-vid {
+
                     height: 50vh;
                     width: 100%;
                 }
@@ -36,7 +38,9 @@
                     height: 50% !important;
                 }
                 .intro {
-                    height: calc(50vh - var(--nav-height)) !important;
+                    /*height: calc(50vh - var(--nav-height)) !important;*/
+                    height: 100%;
+                    width: 100%;
                 }
                 .intro-header {
                     height: 50% !important;
@@ -50,7 +54,7 @@
             .intro-header {
                 position: relative;
                 height: calc(calc(100vw * 0.25625) - var(--nav-height));
-                margin-top: var(--nav-height);
+                margin-top: var(--nav-height)-20px;
                 width: 100%;
                 text-align: center;
                 display: flex;
@@ -99,55 +103,61 @@
     </head>
     <body class="text bg-sunrise-dark">
         <script src="resources/navbar.f9bc506f06de154347fc687e9469e432ba8382e4.js" id="navbar" data-page="index"></script>
-
-        <div class="intro">
-            <div id="video-overlay" class="bg-sunrise-dark-overlay" style="width: 100%; height: calc(100vw * 0.65625); position: fixed; z-index: -1; top: 0; left: 0;"></div>
-            
-            <script>
-                let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-                if (isSafari) {
-                    videoHack("bg-video", "resources/videos/hubWebsiteVideo.mp4", "video/mp4")
-                }
-            </script>
-            <video playsinline autoplay muted loop class="bg-vid" id="bg-video">
-                <source src="resources/videos/hubWebsiteVideo.mp4" type="video/mp4">
-            </video>
-            
-            <header class="intro-header">
-                <div class="outline-celebratory-gradient" style="display: flex; padding: 1em; border-style: solid; border-width: 5px; height:90%; width:80%">
-                    <img class="intro-image" src="resources/images/sunriseDurhamLogo.PNG" alt="The Sunrise Durham Logo" style="object-fit: scale-down; align-self:center">
-                    <h1 class="text-headline sunrise-yellow intro-text">
-                        <span>SUNRISE DURHAM</span>
-                    </h1>
-                </div>
-            </header>
-        </div>
+        
+        
+        <header class="intro-header">
+            <div class="outline-celebratory-gradient" style="display: flex; padding: 1em; border-style: solid; border-width: 5px; height:90%; width:80%">
+                <img class="intro-image" src="resources/images/sunriseDurhamLogo.PNG" alt="The Sunrise Durham Logo" style="object-fit: scale-down; align-self:center">
+                <h1 class="text-headline sunrise-yellow intro-text">
+                    <span>SUNRISE DURHAM</span>
+                </h1>
+            </div>
+        </header>
 
         <main class="mb-5">
+            
             <div class="m-5">
-                <div class="container-fluid mb-5 bg-sunrise-dark-overlay outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
-                    <h2 class="sunrise-mint text text-center" style="padding: 1em;">
-                        We are the Durham hub of the <a href="https://www.sunrisemovement.org" target="_blank" rel="noopener noreferrer" class="sunrise-link">Sunrise Movement</a>, a youth movement to stop climate change and create millions of good jobs in the process.
-                    </h2>
-                    <h2 class="sunrise-mint text text-center" style="padding: 1em;">
-                        You can get involved by attending our hub meetings, which are <b style="color: var(--sunrise-yellow);" style="color: var(--sunrise-yellow);">Monday</b> at <b style="color: var(--sunrise-yellow);">8 PM</b>. They alternate with campaign meetings, which are on every other <b style="color: var(--sunrise-yellow);">Monday</b> at <b style="color: var(--sunrise-yellow);">8 PM</b>.
-                    </h2>
+                <div style="display: flex; justify-content: center;">
+                    
+                    <div class="container-fluid mb-5 bg-sunrise-dark-overlay outline-celebratory-gradient" style="border-width: 5px; border-style: solid;">
+                        <h2 class="sunrise-mint text text-center" style="padding: 1em;">
+                            We are the Durham hub of the <a href="https://www.sunrisemovement.org" target="_blank" rel="noopener noreferrer" class="sunrise-link">Sunrise Movement</a>, a youth movement to stop climate change and create millions of good jobs in the process.
+                        </h2>
+                        <h2 class="sunrise-mint text text-center" style="padding: 1em;">
+                            You can get involved by attending our hub meetings, which are <b style="color: var(--sunrise-yellow);" style="color: var(--sunrise-yellow);">Monday</b> at <b style="color: var(--sunrise-yellow);">8 PM</b>. They alternate with campaign meetings, which are on every other <b style="color: var(--sunrise-yellow);">Monday</b> at <b style="color: var(--sunrise-yellow);">8 PM</b>.
+                        </h2>
+                    </div>
+                    <div class="intro" style = "display: flex;">
+                        <!--<div id="video-overlay" class="bg-sunrise-dark-overlay" style="width: 100%; height: calc(100vw * 0.65625); z-index: -1; top: 0; left: 0;"></div>-->
+                        
+                        <script>
+                            let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+                            if (isSafari) {
+                                videoHack("bg-video", "resources/videos/hubWebsiteVideo.mp4", "video/mp4")
+                            }
+                        </script>
+                        <video playsinline autoplay muted loop class="bg-vid" id="bg-video">
+                            <source src="resources/videos/hubWebsiteVideo.mp4" type="video/mp4">
+                        </video>
+                        
+                        
+                    </div>
                 </div>
                 <div style="display: flex; flex-direction: row; justify-content: space-between;">
                     <div style="display: flex; flex-direction: column; flex-basis:30%">
                         <h2 class="sunrise-mint text text-center">
-                            Get involved with Sunrise Durham by filling out our plug-in form
+                            Get involved
                         </h2>
                         <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://secure.everyaction.com/vsqjjp55z0qrusTfeoBkPQ2?emci=47222172-908f-ed11-9d7b-00224832e811&emdi=b13a1254-9c8f-ed11-9d7b-00224832e811&ceid=451888')">Fill Out Plug-In Form</button>
                         
                     </div>
                     <div style="display: flex; flex-direction: column; flex-basis:30%">
-                         <h2 class="sunrise-mint text text-center">You can also donate</h3>
+                         <h2 class="sunrise-mint text text-center">Donate</h3>
                         <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://secure.actblue.com/donate/sunrisedurham')">Donate</button>
                     
                     </div>
                     <div style="display: flex; flex-direction: column; flex-basis:30%">
-                        <h2 class="sunrise-mint text text-center">and/or read our Medium to learn more!</h3>
+                        <h2 class="sunrise-mint text text-center">Read Medium Articles</h3>
                         <button class="btn btn-sunrise-yellow mb-3" onclick="window.open('https://medium.com/@sunrisedurham')">Learn More</button>
                         
                     </div>
