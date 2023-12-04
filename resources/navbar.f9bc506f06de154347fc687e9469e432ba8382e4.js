@@ -6,23 +6,23 @@ let navbar = `<nav class="navbar navbar-expand-lg bg-sunrise-dark-overlay">
     <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="btn btn-outline-sunrise-red m-1" href="index.html" id="index">
+                <a class="btn btn-outline-sunrise-yellow m-1" href="index.html" id="index">
                     Home
                 </a>
             </li>
             
             <li class="nav-item">
-                <a class="btn btn-outline-sunrise-red m-1" href="actions.html" id="actions">
+                <a class="btn btn-outline-sunrise-yellow m-1" href="actions.html" id="actions">
                     Recent Actions
                 </a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-outline-sunrise-red m-1" href="upcoming-actions.html" id="upcoming-actions">
+                <a class="btn btn-outline-sunrise-yellow m-1" href="upcoming-actions.html" id="upcoming-actions">
                     Upcoming Actions
                 </a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-outline-sunrise-red m-1" href="about.html" id="about">
+                <a class="btn btn-outline-sunrise-yellow m-1" href="about.html" id="about">
                     About The Hub
                 </a>
             </li>
