@@ -14,8 +14,5 @@ let footer = `<hr class="bg-celebratory-gradient-horizontal" style="padding: 0.1
             <div class="social-logo email-logo"></div>
         </a>
     </div>
-    <h2 class="text-end text-headline sunrise-yellow" style="padding: 0.5em; margin-bottom: 0;">
-        COPYRIGHT &#169; 2021 SUNRISE DURHAM
-    </h2>
 </footer>`
 document.getElementById("footer").outerHTML = footer
