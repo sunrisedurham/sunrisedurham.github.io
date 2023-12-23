@@ -1,4 +1,4 @@
-let navbar = `<nav class="navbar navbar-expand-lg bg-sunrise-dark-overlay" style ="margin: auto;">
+let navbar = `<nav class="navbar navbar-expand-lg bg-sunrise-dark-overlay">
 <div class="container-fluid">
     <button class="navbar-toggler navbar-toggler-sunrise-yellow" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle the navigation bar">
         <span class="navbar-toggler-icon big-navbar-toggler-icon sunrise-yellow-navbar-toggler-icon"></span>
