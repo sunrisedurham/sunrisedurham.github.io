@@ -26,6 +26,11 @@ let navbar = `<nav class="navbar navbar-expand-lg bg-sunrise-dark-overlay" style
                     About The Hub
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-sunrise-yellow m-1" href="https://secure.everyaction.com/vsqjjp55z0qrusTfeoBkPQ2?emci=47222172-908f-ed11-9d7b-00224832e811&emdi=b13a1254-9c8f-ed11-9d7b-00224832e811&ceid=451888" id="plug in form">
+                    Get Involved
+                </a>
+            </li>
         </ul>
     </div>
 </div>
