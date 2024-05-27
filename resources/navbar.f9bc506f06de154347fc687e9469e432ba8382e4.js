@@ -31,6 +31,12 @@ let navbar = `<nav class="navbar navbar-expand-lg bg-sunrise-dark-overlay" style
                     Get Involved
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-sunrise-yellow m-1" href="https://secure.actblue.com/donate/sunrisedurham" id="Donation">
+                    Donate
+                </a>
+            </li>
+            
         </ul>
     </div>
 </div>
